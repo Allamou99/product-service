@@ -10,9 +10,14 @@ import org.springframework.test.context.ActiveProfiles;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+/*
 @DataJpaTest
 @ActiveProfiles("test")
+
+ */
+
 class CategoryRepoTest {
+    /*
     @Autowired
     private CategoryRepo categoryRepo;
     @BeforeEach
@@ -36,4 +41,6 @@ class CategoryRepoTest {
         Optional<Category> categoryTest = this.categoryRepo.findByCategoryName("Electronique");
         assertThat(categoryTest).isNotEmpty();
     }
+
+     */
 }
