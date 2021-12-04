@@ -1,12 +1,14 @@
 package com.example.productservice.model;
 
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -20,8 +22,7 @@ public class Category {
     private int categoryId;
 
     private String categoryName;
-
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
-    private Set<Sous_Category> sousCategories;
+    private List<Sous_Category> sousCategories;
 
 }
