@@ -37,7 +37,7 @@ class CategoryServiceTest {
         Category categoryTest = categoryService.saveCategory(category);
         assertThat(categoryTest).isEqualTo(category);
     }
-    @DisplayName("Should fin category by its name")
+    @DisplayName("Should fin category by its name.")
     @Test
     void FindCategoryByNameTest(){
         when(this.categoryRepo.findByCategoryName("Electronique"))
