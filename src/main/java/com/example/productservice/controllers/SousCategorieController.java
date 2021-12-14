@@ -2,13 +2,11 @@ package com.example.productservice.controllers;
 
 
 import com.example.productservice.model.Sous_Category;
-import com.example.productservice.repository.SousCategorieRepo;
 import com.example.productservice.service.SousCategorieService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/api/souscategories")
@@ -23,5 +21,9 @@ public class SousCategorieController {
     @GetMapping
     public List<Sous_Category> sous_categories(){
         return this.sousCategorieService.getallsCategories();
+    }
+    @GetMapping("/{souscategoryname}")
+    public Sous_Category getSousCategoryByName(@PathVariable String souscategoryname){
+        return this.sousCategorieService.getSousCategoryByName(souscategoryname);
     }
 }

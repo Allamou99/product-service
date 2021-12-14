@@ -26,8 +26,6 @@ public class ProductServiceApplication implements CommandLineRunner {
 
         this.categoryService.saveCategory(category1);
         this.categoryService.saveCategory(category2);
-
          */
-
     }
 }

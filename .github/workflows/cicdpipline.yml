@@ -23,8 +23,7 @@ jobs:
            distribution: 'adopt'
            cache: maven
         - name: Run tests
-          run: mvn test    
-    
+          run: mvn test
   build:
     runs-on: ubuntu-latest
     needs: test

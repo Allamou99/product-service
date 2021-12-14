@@ -17,7 +17,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 class CategoryRepoTest {
-
     @Autowired
     private CategoryRepo categoryRepo;
     @BeforeEach

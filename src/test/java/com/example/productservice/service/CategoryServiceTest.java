@@ -30,6 +30,7 @@ class CategoryServiceTest {
                 .categoryName("Electronique")
                 .build();
     }
+    //bla
     @Test
     @DisplayName("Should save category correctly")
     void SaveCategoryTest() {

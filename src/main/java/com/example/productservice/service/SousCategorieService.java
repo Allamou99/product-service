@@ -1,6 +1,7 @@
 package com.example.productservice.service;
 
 import com.example.productservice.dtos.SousCategorieDTO;
+import com.example.productservice.exceptions.CategoryException;
 import com.example.productservice.model.Category;
 import com.example.productservice.model.Sous_Category;
 import com.example.productservice.repository.CategoryRepo;
@@ -37,5 +38,9 @@ public class SousCategorieService {
         category.getSousCategories().stream()
                 .forEach(sous_category -> sousCategorieDTOS.add(new SousCategorieDTO(sous_category.getSCName())));
         return sousCategorieDTOS;
+    }
+    public Sous_Category getSousCategoryByName(String name){
+        return this.sousCategorieRepo.findBySCName(name)
+                .orElseThrow(()-> new CategoryException("No sous category found"));
     }
 }
