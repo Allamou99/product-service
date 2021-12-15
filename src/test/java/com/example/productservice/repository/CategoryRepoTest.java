@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ActiveProfiles("test")
 
 
-
+//testcategoryrepository
 class CategoryRepoTest {
     @Autowired
     private CategoryRepo categoryRepo;
