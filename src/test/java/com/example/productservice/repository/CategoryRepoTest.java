@@ -40,5 +40,4 @@ class CategoryRepoTest {
         Optional<Category> categoryTest = this.categoryRepo.findByCategoryName("Electronique");
         assertThat(categoryTest).isNotEmpty();
     }
-
 }
