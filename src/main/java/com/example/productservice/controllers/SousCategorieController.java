@@ -1,6 +1,7 @@
 package com.example.productservice.controllers;
 
 
+import com.example.productservice.dtos.SousCategorieDTO;
 import com.example.productservice.model.Sous_Category;
 import com.example.productservice.service.SousCategorieService;
 import lombok.AllArgsConstructor;
@@ -13,17 +14,17 @@ import java.util.List;
 @AllArgsConstructor
 public class SousCategorieController {
     private SousCategorieService sousCategorieService;
-    @PostMapping("/{categoryName}")
-    public String saveSousCategories(@PathVariable("categoryName") String categoryName){
-        this.sousCategorieService.AddSousCategoriesToCategories(categoryName);
-        return "Done";
+
+    //get all sous categories from a category
+    @GetMapping("/{category}")
+    public List<SousCategorieDTO> getSousCategoryByName(@PathVariable String category){
+        return this.sousCategorieService.getAllSousCategoryOfCategory(category);
     }
-    @GetMapping
-    public List<Sous_Category> sous_categories(){
-        return this.sousCategorieService.getallsCategories();
-    }
-    @GetMapping("/{souscategoryname}")
-    public Sous_Category getSousCategoryByName(@PathVariable String souscategoryname){
-        return this.sousCategorieService.getSousCategoryByName(souscategoryname);
+
+    //add a sous category to a category
+    @PostMapping("/addSC/{categoryName}")
+    public String addSousCategoryToCategory(@RequestBody Sous_Category sous_category,
+                                            @PathVariable String categoryName){
+        return this.sousCategorieService.addSousCategory(categoryName,sous_category);
     }
 }

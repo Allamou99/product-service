@@ -28,16 +28,18 @@ public class CategoryController {
         this.categoryService.saveCategory(category1);
         this.categoryService.saveCategory(category2);
     }
-    @GetMapping
-    public List<CategoriesDTO> getAllCategories(){
-        List<Category> categories =  this.categoryService.getAllCategories();
-        List<CategoriesDTO> categoriesDTOS = new ArrayList<>();
-        categories.stream().forEach(category -> categoriesDTOS
-                .add(new CategoriesDTO(category.getCategoryName(),this.sousCategorieService.getSouscategoriesDTOfromcategorie(category))) );
-        return categoriesDTOS;
-    }
+
     @GetMapping("/{CategoryName}")
-    public Category categoryByName(@PathVariable("CategoryName") String name){
-        return this.categoryService.findCategoryByName(name);
+    public CategoriesDTO categoryByName(@PathVariable("CategoryName") String name){
+        return this.categoryService.findCategoryByNameRequest(name);
     }
 }
+
+/*
+List<Category> categories =  this.categoryService.getAllCategories();
+        List<CategoriesDTO> categoriesDTOS = new ArrayList<>();
+        categories.stream().forEach(category -> categoriesDTOS
+                .add(new CategoriesDTO(category.getCategoryName(),
+                        this.sousCategorieService.getSouscategoriesDTOfromcategorie(category))));
+        return categoriesDTOS;
+ */

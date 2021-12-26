@@ -20,7 +20,8 @@ class CategoryRepoTest {
     @Autowired
     private CategoryRepo categoryRepo;
     @BeforeEach
-    void CleanH2Database(){
+    void CleanH2Database()
+    {
         this.categoryRepo.deleteAll();
     }
     @Test
