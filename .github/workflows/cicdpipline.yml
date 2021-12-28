@@ -53,5 +53,6 @@ jobs:
         with:
           context: .
           repository: allamou99/productservice
+          file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/version:latest
