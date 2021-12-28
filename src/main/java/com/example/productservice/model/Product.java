@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Data
 @Builder
 @Entity
+//blabl
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
