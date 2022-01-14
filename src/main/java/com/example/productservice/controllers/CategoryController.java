@@ -21,9 +21,11 @@ public class CategoryController {
     public void InitCategories(){
         Category category1 = Category.builder()
                 .categoryName("Electronique")
+                .description("In this section, you'll find all the electronic device you might need.")
                 .build();
         Category category2 = Category.builder()
                 .categoryName("Electromenagé")
+                .description("Whatever electronic thing you might need for your home is here.")
                 .build();
         this.categoryService.saveCategory(category1);
         this.categoryService.saveCategory(category2);

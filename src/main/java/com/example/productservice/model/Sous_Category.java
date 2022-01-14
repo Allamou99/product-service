@@ -24,7 +24,7 @@ public class Sous_Category {
     private int SCId;
     @JsonProperty(value = "SCName")
     private String SCName;
-
+    private String description;
 
     @ManyToOne()
     @JoinColumn(name = "category_id" )

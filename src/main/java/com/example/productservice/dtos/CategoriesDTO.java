@@ -13,5 +13,7 @@ import java.util.Set;
 @Builder
 public class CategoriesDTO {
     private String categoryName;
+    private String description;
+    private int souscategoryCount;
     private List<SousCategorieDTO> sousCategories;
 }

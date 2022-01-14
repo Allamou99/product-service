@@ -34,7 +34,8 @@ public class SousCategorieService {
         List<SousCategorieDTO> sousCategorieDTOS = new ArrayList<>();
         Category category = this.categoryService.findCategoryByName(categoryName);
         category.getSousCategories().stream()
-                .forEach(sous_category -> sousCategorieDTOS.add(new SousCategorieDTO(sous_category.getSCName())));
+                .forEach(sous_category -> sousCategorieDTOS.add(new SousCategorieDTO(sous_category.getSCName(),
+                        sous_category.getDescription(),sous_category.getProducts().size())));
         return sousCategorieDTOS;
     }
 }

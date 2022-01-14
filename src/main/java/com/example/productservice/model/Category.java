@@ -20,7 +20,7 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int categoryId;
-
+    private String description;
     private String categoryName;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
     private List<Sous_Category> sousCategories;

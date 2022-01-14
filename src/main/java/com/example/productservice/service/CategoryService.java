@@ -32,11 +32,15 @@ public class CategoryService {
 
         List<SousCategorieDTO> sousCategorieDTOS = new ArrayList<>();
         category.getSousCategories().stream()
-                .forEach(sous_category -> sousCategorieDTOS.add(new SousCategorieDTO(sous_category.getSCName())));
+                .forEach(sous_category -> sousCategorieDTOS.add(new SousCategorieDTO(sous_category.getSCName(),
+                        sous_category.getDescription(),sous_category.getProducts().size())));
 
         CategoriesDTO categoriesDTO = CategoriesDTO.builder()
                 .categoryName(category.getCategoryName())
-                .sousCategories(sousCategorieDTOS).build();
+                .sousCategories(sousCategorieDTOS)
+                .description(category.getDescription())
+                .souscategoryCount(sousCategorieDTOS.size())
+                .build();
 
         return categoriesDTO;
     }

@@ -33,7 +33,7 @@ class CategoryServiceTest {
     @Test
     @DisplayName("Should save category correctly")
     void SaveCategoryTest() {
-        when(this.categoryRepo.save(category)).thenReturn(expectedReturn);
+        when(this.categoryRepo.save(expectedReturn)).thenReturn(expectedReturn);
         Category categoryTest = categoryService.saveCategory(category);
         assertThat(categoryTest).isEqualTo(expectedReturn);
     }
@@ -42,7 +42,7 @@ class CategoryServiceTest {
     void FindCategoryByNameTest(){
         when(this.categoryRepo.findByCategoryName("Electronique"))
                 .thenReturn(Optional.of(expectedReturn));
-        Category categoryTest = categoryService.findCategoryByName("Electronique");
+        Category categoryTest = categoryService.findCategoryByName("Electromenagé");
         assertThat(categoryTest).isEqualTo(expectedReturn);
     }
     @DisplayName("Should raise No category with name found exception")
@@ -53,6 +53,6 @@ class CategoryServiceTest {
                     .thenReturn(Optional.of(expectedReturn));
             categoryService.findCategoryByName("Electroniquee");
         }).isInstanceOf(CategoryException.class)
-                .hasMessage("No category with this name");
+                .hasMessage("No category with this name bla");
     }
 }

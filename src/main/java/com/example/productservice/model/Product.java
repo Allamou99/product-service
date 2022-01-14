@@ -21,7 +21,7 @@ public class Product {
 
     private String productName;
     private String description;
-
+    private String productOwner_UserName;
     @ManyToOne
     @JoinColumn(name = "souscategory_id")
     private Sous_Category sous_category;

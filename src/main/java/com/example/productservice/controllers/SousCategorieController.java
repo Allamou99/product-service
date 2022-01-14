@@ -17,7 +17,7 @@ public class SousCategorieController {
 
     //get all sous categories from a category
     @GetMapping("/{category}")
-    public List<SousCategorieDTO> getSousCategoryByName(@PathVariable String category){
+    public List<SousCategorieDTO> getSousCategoryByCategoryName(@PathVariable String category){
         return this.sousCategorieService.getAllSousCategoryOfCategory(category);
     }
 

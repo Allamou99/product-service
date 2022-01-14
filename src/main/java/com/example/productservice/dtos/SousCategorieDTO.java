@@ -9,4 +9,6 @@ import lombok.Data;
 @Builder
 public class SousCategorieDTO {
     private String sousCatName;
+    private String description;
+    private int productNumber;
 }
